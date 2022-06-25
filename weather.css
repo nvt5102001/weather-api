@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-image: url('https://source.unsplash.com/1600x900/?landscape');
+    background-repeat: no-repeat;
+    background-size:cover;
+    font-family: 'Poppins', sans-serif;
+}
+
+.pb-5 { padding-bottom: 50px; }
+.mb-2 { margin-bottom: 20px; }
+.pb-2 { padding-bottom: 20px; }
+.pt-5 { padding-top: 50px; }
+
+.container{
+    color:#fff;
+    height: 100vh;
+    position: relative;
+    background: rgba(24,24,27, 0.5);
+}
+
+.card {
+  width: 900px;
+  height: 500px;
+  display:flex;
+  align-items: center; 
+  background: rgba(24,24,27, 0.7);
+  border: 3px solid #fff;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.current-info{
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 2.2;
+    height: 100%;
+    width: 100%;
+    position:relative;
+    padding: 50px;
+    border-radius: 15px 0 0 15px;
+    border-right: 1px solid gray;
+}
+.place-container
+{
+  position: absolute;
+  top: 10%;
+  right: 5%;
+
+}
+.card_right {
+  flex: 1;
+  height: 100%
+}
+
+.date-container{
+    font-weight: 100;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+}
+.date-container .time{
+    font-size: 60px;
+}
+
+.date-container #am-pm{
+    font-size: 25px;
+}
+
+.date-container .date{
+    font-size: 25px;
+}
+#temperature
+{
+  font-size: 100px;
+  position: absolute;
+  bottom:7%;
+  right: 5%;
+}
+
+.place-container .time-zone{
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.place-container .country{
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.others
+{
+  margin: 30px 0;
+  padding: 0 10px;
+}
+
+.others .weather-item{
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0 0 0 ;
+    border-bottom: 1px solid #eee;
+    padding-bottom:5px; 
+    
+}
+.others .weather-item i
+{
+  font-size: 12px;
+  color: #fff;
+}
+
+.future-forecast{
+    background: rgba(24,24,27,0.8);
+    padding: 25px;
+    display: flex;
+    color:white;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+   
+}
+.today { border-bottom: 1px solid #eee; padding-bottom: 30px;  }
+.img-today
+{
+  display: flex;
+  justify-content: center;
+}
+
+.today img
+{
+  width: 200px;
+  margin: 0 auto;
+  height: 200px;
+}
+.description{
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.future-forecast .weather-forecast{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.weather-forecast .weather-forecast-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 10px;
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.2)
+}
+
+.weather-forecast .weather-forecast-item .day{
+    padding: 5px 15px;
+    background: #3C3C44;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.weather-forecast .weather-forecast-item .temp{
+    font-weight: 100;
+    font-size: 12px;
+}
+
+.modal .otherWeather .otherWeatherItem
+{
+  padding: 30px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+
+}
+.modal .otherWeather .otherWeatherItem:hover,
+.future-forecast .weather-forecast .weather-forecast-item:hover,
+.card:hover
+{
+  box-shadow: 0 0 15px rgba(255,255,255,0.6);
+}
+
+.description-daily
+{
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+.temp 
+{
+  margin: 3px 0;
+}
+.hide
+{
+  display: none;
+}
+
+.otherWeather
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 10%;
+  text-align: center;
+}
+.otherWeatherItem
+{
+  flex-basis: 30%;
+  background: rgba(24,24,27,0.8);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  margin: 5% 0 ;
+}
+
+#mybtn
+{
+  display: flex;
+  justify-content: center;
+  padding: 10px 40px;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  margin: auto;
+  background-color:rgba(24,24,27,0.8); 
+}
+#mybtn:hover,.weatherHourItem:hover {box-shadow: 0 0 10px rgba(255,255,255,0.6);}
+
+.bgk_dark,.modal
+{
+  background-color:rgba(24,24,27,0.8); 
+}
+
+#weather_hour
+{
+  background: rgba(24,24,27,0.8);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2% 11%;
+}
+
+.db24h
+{
+  text-align: center;
+  background-color:rgba(24,24,27,0.8);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255,255,255,0.6); 
+  border: 2px solid #fff;
+  border-radius: 50px;
+  width: 500px;
+  padding: 10px 20px;
+  margin: auto;
+}
+.otherWeatherHour
+{
+  flex-basis: 49%;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.weatherHourItem 
+{ 
+  display: flex; 
+  align-items: center; 
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+}
+.weatherHourItem > div
+{
+  flex: 1;
+}
+.weatherHourItem > div > img
+{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+.weatherHourItemIcon { display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+.weatherHourItemDetail
+{
+  background: #eee;
+  border: 2px solid #aaa;
+  border-radius: 5px; 
+  margin: 5px 5%;
+  padding: 20px;
+  display: none;
+}
+.weatherHourItemDetail > div
+{
+  flex-basis: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0 ;
+  border-bottom: 1px solid #333; 
+}
+.weatherHourItem .hide
+{
+  display: none;
+}
+
+
+@media only screen and  (max-width:992px){
+    .card
+    {
+      flex-direction: column;
+      width: 700px;
+      height: 500px;
+    }
+    .current-info
+    {
+      border-radius:  15px 15px 0 0;
+      border: none;
+    }
+    .card_right
+    {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 10px 30px;
+    }
+    .today ,.others 
+    {
+      flex: 1;
+      border: none;
+    }
+    .otherWeatherItem
+    {
+      flex-basis: 45%;
+    }
+   
+}
+
+@media only screen and  (max-width:768px){
+    .otherWeatherItem
+    {
+      flex-basis: 100%;
+    }
+   
+}

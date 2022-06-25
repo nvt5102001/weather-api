@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Weather">
+    <meta name="author" content="Thủy Nguyễn">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Dự báo thời tiết</title>
+</head>
+<body>
+    
+    <div id="bgkImg">
+      <div class="container">
+      <div class="card" >
+        <div class="current-info" id="current-info" >
+            <div class="place-container">
+                <div class="time-zone" id="time-zone">Asia / Bangkok</div>
+                <div id="country" class="country"></div>
+            </div>
+            <div class="date-container">
+                <div class="time" id="time">
+                    00:00<span id="am-pm">AM</span>
+                </div>
+                <div class="date" id="date">
+                    Monday, 5 Oct
+                </div> 
+            </div>
+            <div id="temperature"></div>
+        </div>  
+        <div class="card_right">
+               <div class="today" id="current-temp">
+                  <div class="img-today">
+                    <img src="http://openweathermap.org/img/wn/03d@2x.png" alt="weather icon" class="w-icon">
+                  </div>
+                  <div class="other">
+                    <div class="description">BROKEN CLOUDS</div>
+                  </div> 
+              </div>
+
+              <div class="others" id="current-weather-items">
+                <div class="weather-item">
+                      <div><i class="fa-solid fa-droplet"></i> Humidity</div>
+                   
+                  </div>
+                  <div class="weather-item">
+                      <div><i class="fa-solid fa-down-left-and-up-right-to-center"></i> Pressure</div>
+                      
+                  </div>
+                  <div class="weather-item">
+                      <div><i class="fa-solid fa-wind"></i> Wind Speed</div>
+                  </div>
+                  <div class="weather-item">
+                      <div><i class="fas fa-sun"></i> Uvi</div>
+                  </div>
+                  <div class="weather-item">
+                      <div><i class="fas fa-eye"></i> Visibility</div>
+                     
+                  </div>
+                  <div class="weather-item">
+                      <div><i class="fa-solid fa-mountain-sun"></i> Sunrise</div>
+                  </div>   
+              </div>
+         </div>
+      </div>  
+    </div>
+    </div>
+
+    <div class="bgk_dark pt-5">
+      <h2 class="db24h">Dự báo thời tiết trong 24 giờ tới</h2>
+    </div>
+
+     <div id="weather_hour">
+        <div class="otherWeatherHour">
+           <div class="weatherHourItem" id='weatherHourItem${idx}'> 
+                <div>1:00</div>
+                <div>20&#176;C</div>
+                <div class="weatherHourItemIcon">
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                    Broken Clouds
+                </div>
+                <div>
+                    <i class="fas fa-caret-down"></i>
+                    <i class="fas fa-caret-up hide"></i>
+                </div>
+           </div>
+           <div class="weatherHourItemDetail" id="weatherHourItemDetail${idx}">
+                 <div>
+                   <div><i class="fa-solid fa-wind"></i> Wind Speed</div> 
+                   <div>10 m/s</div>
+                </div>
+                <div>
+                    <div><i class="fas fa-sun"></i> Uvi</div>
+                    <div>10 UV</div>
+                </div>
+                <div>
+                    <div><i class="fas fa-cloud"></i> Cloud</div>
+                    <div>10 %</div>
+                </div>
+                <div>
+                    <div><i class="fa-solid fa-droplet"></i> Humidity</div>
+                    <div>10 %</div>
+                </div>
+
+               <div>
+                    <div><i class="fa-solid fa-down-left-and-up-right-to-center"></i> Pressure</div>
+                    <div>10 hPa</div>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+     </div>
+     
+     <div class="bgk_dark pt-5">
+      <h2 class="db24h">Dự báo thời tiết trong 7 ngày tới</h2>
+    </div>
+
+    <div class="future-forecast">
+        <div class="weather-forecast" id="weather-forecast">
+            <div class="weather-forecast-item">
+                <div class="day">Tue</div>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                <div class="temp">Night</div>
+                <div class="temp">Day</div>
+            </div>
+           
+        </div>    
+    </div>
+   
+
+    <div class="hide modal">
+      <div class="otherWeather" id="otherWeather">
+        <!------------------------------------------------------------->
+        <div class="otherWeatherItem">
+            <div class="day">Wed</div>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+            <div class="temp">Night</div>
+            <div class="temp">Day</div>
+
+           <div class="others" id="current-weather-items">
+              <div class="weather-item">
+                <div><i class="fa-solid fa-droplet"></i> Humidity</div>
+              </div>
+
+              <div class="weather-item">
+                    <div><i class="fa-solid fa-down-left-and-up-right-to-center"></i> Pressure</div>   
+                </div>
+
+                <div class="weather-item">
+                    <div><i class="fa-solid fa-wind"></i> Wind Speed</div>
+                    
+                </div>
+
+                <div class="weather-item">
+                    <div><i class="fas fa-eye"></i> Visibility</div>
+                   
+                </div>
+
+                <div class="weather-item">
+                    <div><i class="fas fa-sun"></i> Sunrise</div>
+                    
+                </div>
+
+                <div class="weather-item">
+                    <div><i class="fas fa-moon"></i> Sunset</div>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        </div>
+
+      
+      </div>
+    </div>
+
+    <div class="bgk_dark pb-5">
+       <button id="mybtn">Xem chi tiết</button>
+     </div>
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="weather.js"></script>
+</body>
+</html>
